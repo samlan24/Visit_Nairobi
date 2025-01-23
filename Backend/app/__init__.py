@@ -18,6 +18,8 @@ def create_app():
     csrf = CSRFProtect(app)
     csrf.init_app(app)
 
+    from app import models
+
     from app.auth import auth
     app.register_blueprint(auth)
 
