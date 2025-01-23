@@ -2,6 +2,7 @@ from app import db
 from datetime import datetime
 
 
+
 class Role(db.Model):
     __tablename__ = 'roles'
     id = db.Column(db.Integer, primary_key=True)
@@ -23,6 +24,7 @@ class User(db.Model):
 
 
     role = db.relationship('Role', backref='users', lazy=True)
+    business = db.relationship('Business', back_populates='owner', lazy='dynamic')
 
     def __repr__(self):
         return f'<User {self.username}, Role {self.role.name}>'
