@@ -28,8 +28,7 @@ class User(db.Model):
     roles = db.relationship('Role', secondary=users_roles, backref=db.backref('users', lazy='dynamic'))
 
 
-    business = db.relationship('Business', back_populates='owner', lazy='dynamic')
-    chats = db.relationship('Chat', backref='user', lazy=True)
+    businesses = db.relationship('Business', back_populates='owner', lazy='dynamic')
     reviews = db.relationship('Review', back_populates='user', lazy=True)
     events = db.relationship('Event', back_populates='user', lazy=True)
 
