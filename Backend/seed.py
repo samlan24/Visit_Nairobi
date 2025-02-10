@@ -1,5 +1,5 @@
 from app import db, create_app
-from seed_data import COUNTY_DATA
+from seed_data import COUNTY_DATA, CATEGORY_DATA, ROLE_DATA
 from app.categories.models import Category
 from app.auth.models import Role, User
 from app.businesses.models import Business
@@ -28,6 +28,24 @@ def seed_locations():
         db.session.commit()
         print("Database seeding complete!")
 
+
+def seed_categories():
+    for category_name in CATEGORY_DATA:
+        category = Category(name=category_name)
+        db.session.add(category)
+
+    db.session.commit()
+    print("Categories seeded successfully!")
+
+def seed_roles():
+    for role_name in ROLE_DATA:
+        role = Role(name=role_name)
+        db.session.add(role)
+
+
 if __name__ == "__main__":
-    seed_locations()
+    with app.app_context():
+        seed_locations()
+        seed_roles()
+        seed_categories()
 

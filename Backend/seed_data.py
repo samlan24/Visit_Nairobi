@@ -30,3 +30,18 @@ COUNTY_DATA = {
         "Athi River", "Mlolongo", "Syokimau", "Machakos Town", "Mavoko", "Kangundo", "Mwala"
     ],
 }
+
+
+CATEGORY_DATA = [
+    "Restaurants",
+    "Hotels",
+    "Bars",
+    "Parks",
+    "Museums"
+]
+
+ROLE_DATA = [
+    "Admin",
+    "Business Owner",
+    "User"
+]
