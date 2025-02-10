@@ -1,6 +1,6 @@
 from flask import Blueprint
 
-auth = Blueprint('location', __name__)
+auth = Blueprint('categories', __name__)
 
 from . import routes
 from . import models

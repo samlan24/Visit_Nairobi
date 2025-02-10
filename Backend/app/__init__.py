@@ -34,6 +34,18 @@ def create_app():
     from app.events import events
     app.register_blueprint(events)
 
+    from app.categories import categories
+    app.register_blueprint(categories)
+
+    from app.location import location
+    app.register_blueprint(location)
+
+    from app.reviews import reviews
+    app.register_blueprint(reviews)
+
+    from app.search import search
+    app.register_blueprint(search)
+
     return app
 
 
