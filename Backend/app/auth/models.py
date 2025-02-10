@@ -25,6 +25,9 @@ class User(db.Model):
 
     role = db.relationship('Role', backref='users', lazy=True)
     business = db.relationship('Business', back_populates='owner', lazy='dynamic')
+    chats = db.relationship('Chat', backref='user', lazy=True)
+    reviews = db.relationship('Review', back_populates='user', lazy=True)
+    events = db.relationship('Event', back_populates='user', lazy=True)
 
     def __repr__(self):
         return f'<User {self.username}, Role {self.role.name}>'
